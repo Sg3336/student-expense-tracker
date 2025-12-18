@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Expense Tracker</h1>
+
+    <div class="tabs">
+        <button onclick="filterCategory('All')">All</button>
+        <button onclick="filterCategory('Food')">Food</button>
+        <button onclick="filterCategory('Travel')">Travel</button>
+        <button onclick="filterCategory('Clothing')">Clothing</button>
+        <button onclick="filterCategory('Petrol')">Petrol</button>
+    </div>
+
+    <input type="number" id="dailyLimit" placeholder="Set Daily Limit (₹)">
+    <button class="primary-btn" onclick="setDailyLimit()">Save Daily Limit</button>
+
+    <input type="number" id="monthlyLimit" placeholder="Set Monthly Budget (₹)">
+    <button class="primary-btn" onclick="setMonthlyLimit()">Save Monthly Budget</button>
+
+    <p><strong>Remaining Today:</strong> ₹<span id="remaining">0</span></p>
+
+    <form id="expenseForm">
+        <input type="number" id="amount" placeholder="Amount (₹)" required>
+
+        <select id="category">
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Others">Others</option>
+        </select>
+
+        <input type="date" id="date" required>
+        <input type="text" id="note" placeholder="Note (optional)">
+
+        <button type="submit" id="addBtn">Add Expense</button>
+    </form>
+
+    <input type="text" id="search" placeholder="Search expenses">
+
+    <h2>Total Spent: ₹<span id="total">0</span></h2>
+
+    <h3>Category Summary</h3>
+    <ul id="categorySummary"></ul>
+
+    <button class="danger-btn" onclick="clearAll()">Clear All Expenses</button>
+
+    <ul id="expenseList"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
